@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CosturArtes - Productos de Bordado</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      position: relative;
+      min-height: 100vh;
+      padding-top: 80px; /* espacio para la barra fija */
+      padding-bottom: 80px; /* espacio para el footer */
+    }
+
+    .background-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(-45deg, #e4d4d4, #333, #e65a5a, #3b4953);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+      z-index: -2;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      background-color: #000000;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    header.scrolled {
+      background-color: rgba(0, 0, 0, 0.7); /* Negro con transparencia */
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo h1 {
+      font-family: 'Brush Script MT', cursive;
+      color: white;
+      font-size: 36px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ffd700;
+    }
+
+    .productos {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .productos h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: #e53935;
+    }
+
+    .producto-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .producto {
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .producto:hover {
+      transform: translateY(-5px);
+    }
+
+    .producto img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .producto p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+    .producto button {
+      background-color: #e53935;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .producto button:hover {
+      background-color: #ff0400;
+    }
+
+    .carrito {
+      padding: 40px 20px;
+      background-color: #fff;
+      max-width: 800px;
+      margin: 40px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .carrito h2 {
+      font-size: 28px;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .carrito ul {
+      list-style: none;
+      margin-bottom: 20px;
+      text-align: left;
+      padding: 0;
+    }
+
+    .carrito li {
+      padding: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #e53935;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f8f8f8;
+      border-radius: 5px;
+    }
+
+    .carrito li span {
+      flex: 1;
+    }
+
+    .carrito button {
+      background-color: #e53935;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .carrito button:hover {
+      background-color: #ff0000;
+    }
+
+
+    .producto {
+    background-color: rgba(175, 12, 12, 0.1); 
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(175, 12, 12, 0.3); 
+}
+
+.carrito {
+    background-color: rgba(175, 12, 12, 0.1); 
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(175, 12, 12, 0.3); 
+}
+
+.producto-container p{
+    color: #f8f8f8;
+}
+
+.info h3{
+  font-size: 15px;
+      margin-bottom: 10px;
+      color: #ffffff;
+      text-align: center; 
+}  
+
+.site-footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: #000000;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+}
+  </style>
+</head>
+<body>
+  <div class="background-animation"></div>
+
+  <header id="header">
+    <nav>
+      <div class="logo">
+        <h1>CosturArtes</h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="formulario.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="productos">
+    <h2>Productos para Bordado</h2>
+    <div class="producto-container">
+      <div class="producto"><img src="images/hoodies.jpg" alt="Abrigo"><p>Abrigos de todo tipo de material de su gusto y con el toque de CosturArtes.</p><p>$1500.00</p><button onclick="agregarAlCarrito('Abrigo', 1500)">Agregar</button></div>
+      <div class="producto"><img src="images/bolsos.jpg" alt="Bolso"><p>Bolsos personalizados con bordados a tu gusto. </p><p>$700.00</p><button onclick="agregarAlCarrito('Bolso', 700)">Agregar</button></div>
+      <div class="producto"><img src="images/cojines.jpg" alt="Cojín"><p>Que tus muebles se vean mas lindos con tus cojínes personalizados por CosturArtes.</p><p>$500.00</p><button onclick="agregarAlCarrito('Cojín', 500)">Agregar</button></div>
+      <div class="producto"><img src="images/camisetas.jpg" alt="Camiseta"><p>Modela tus camisetas con los mejores diseños de tu gusto.</p><p>$850.00</p><button onclick="agregarAlCarrito('Camiseta', 850)">Agregar</button></div>
+      <div class="producto"><img src="images/toallas.jpeg" alt="Toalla"><p>Plasma tu personaje favorito y tu nombre en tus toallas para que no se vuelvan a confundir.</p><p>$450.00</p><button onclick="agregarAlCarrito('Toalla', 450)">Agregar</button></div>
+      <div class="producto"><img src="images/gorras.jpg" alt="Gorra"><p>Protege tu cabeza del sol y sobre todo con estilo.</p><p>$600.00</p><button onclick="agregarAlCarrito('Gorra', 600)">Agregar</button></div>
+      <div class="producto"><img src="images/panuelos.jpg" alt="Pañuelo"><p>Customiza tu pañuelo para que tus amigos no crean que es de ellos.</p><p>$350.00</p><button onclick="agregarAlCarrito('Pañuelo', 350)">Agregar</button></div>
+      <div class="producto"><img src="images/bufandas.jpg" alt="Bufanda"><p>Protegete del frío y que vean lo bonita que es tu bufanda</p><p>$400.00</p><button onclick="agregarAlCarrito('Bufanda', 400)">Agregar</button></div>
+    </div>
+  </section>
+  <section class="carrito">
+    <h2>🛒</h2>
+    <ul id="carrito-lista"></ul>
+    <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+  </section>
+
+  <div>
+  <section class="info">
+  <h3>Para mejor información o algún producto fuera de nuestro catálogo, diríjase a nuestro apartado de contactos, donde podrá hablar directamente con nosotros.</h3>
+</section>
+</div>
+
+  <footer class="site-footer">
+        <div class="container">
+    <footer style="background-color: #333, #e65a5a; text-align: center; padding: 10px;">
+            <p>&copy; 2025 CosturArtes. Todos los derechos reservados.</p>
+            <p>Tel:809-715-7885</p>
+            <p>DUEÑOS:Daniel Beltré y Aneudis De León.</p>
+            <p>Fecha de actualizacion: 09 Mayo 2025</p>
+            <p><a href="politica-de-privacidad.html" style="color: #e65a5a; text-decoration: none;">Política de Privacidad</a> | 
+               <a href="terminos-y-condiciones.html" style="color: #e65a5a; text-decoration: none;">Términos y Condiciones</a></p>
+              </div> 
+        </footer>
+    </footer>
+
+  <script>
+    let carrito = [];
+
+    function agregarAlCarrito(nombre, precio) {
+      carrito.push({ nombre, precio });
+      actualizarCarrito();
+    }
+
+    function actualizarCarrito() {
+      const carritoLista = document.getElementById('carrito-lista');
+      carritoLista.innerHTML = ''; // Limpiar la lista antes de agregar los productos
+
+      carrito.forEach((producto, index) => {
+        const item = document.createElement('li');
+        item.innerHTML = `${producto.nombre} - $${producto.precio} <button onclick="eliminarDelCarrito(${index})">Eliminar</button>`;
+        carritoLista.appendChild(item);
+      });
+    }
+
+    function eliminarDelCarrito(index) {
+      carrito.splice(index, 1); // Eliminar el producto del carrito
+      actualizarCarrito();
+    }
+
+    function vaciarCarrito() {
+      carrito = [];
+      actualizarCarrito();
+    }
+
+    // Efecto de desvanecimiento en la barra de navegación al hacer scroll
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>

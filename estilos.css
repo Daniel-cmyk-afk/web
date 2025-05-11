@@ -1,0 +1,386 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    background-color: black;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #e4d4d4, #333, #e65a5a, #3b4953);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.site-header {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2em;
+    font-family: 'Dancing Script', cursive;
+    margin: 0;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 20px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #ec2e2e;
+}
+
+.hero {
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #e92c2c;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #af0c0c;
+}
+
+.featured-products {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.featured-products h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product {
+    background-color: rgba(175, 12, 12, 0.1); 
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(175, 12, 12, 0.3); 
+}
+
+.product img {
+    max-width: 100%;
+    height: 375px;
+    border-radius: 8px; 
+    margin-bottom: 20px;
+    object-fit: cover; 
+}
+
+.product h3 {
+    margin-bottom: 10px;
+}
+
+.site-footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 20px 0;
+}
+
+.product p{
+    text-align: center;
+}
+
+
+/* estilos para la pagina de contactos */
+.contact-page {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.contact-page h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.info-item {
+    margin: 20px;
+    text-align: center;
+}
+
+.info-item i {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #e92c2c;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+/*estilos de la pagina de nosotros*/
+.about-page {
+    padding: 80px 0;
+}
+
+.about-page .container {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 40px;
+}
+
+.info-box {
+    background-color: rgba(175, 12, 12, 0.1); 
+    border-radius: 8px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    text-align: center; 
+    border: 1px solid rgba(175, 12, 12, 0.3); 
+}
+
+.info-image {
+    width: 250px; 
+    height: 150px;
+    margin-bottom: 20px;
+    border-radius: 50%; 
+    overflow: hidden; 
+}
+
+.info-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.info-text {
+    text-align: left; 
+    width: 100%; 
+}
+
+.info-text h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    text-align: center; 
+    color: antiquewhite; 
+}
+
+.info-text p {
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: antiquewhite; 
+}
+
+.values-box .info-text {
+    text-align: center; 
+}
+
+.values-box .info-text ul {
+    list-style: none;
+    padding: 0;
+    display: inline-block; 
+    text-align: left; 
+}
+
+.values-box .info-text li {
+    margin-bottom: 10px;
+    color: antiquewhite; 
+}
+
+.values-box .info-text li::before {
+    content: "•";
+    color: #e92c2c;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+@media (min-width: 768px) {
+    .about-page .container {
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); 
+    }
+
+    .info-box {
+        flex-direction: row; 
+        text-align: left; 
+        align-items: flex-start;
+    }
+
+    .info-image {
+        margin-right: 30px;
+        margin-bottom: 0;
+    }
+
+    .values-box {
+        text-align: center; 
+    }
+
+    .values-box .info-text {
+        text-align: left; 
+    }
+
+    .values-box .info-text h2 {
+        text-align: center; 
+    }
+
+    .values-box .info-text ul {
+        display: block; 
+        margin: 0 auto; 
+        text-align: left; 
+        width: fit-content; 
+    }
+}
+
+
+/* estilos de la pagina de servicios */
+.services-page {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.services-page h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.services-page p {
+    margin-bottom: 30px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.service-item {
+    background-color: rgba(175, 12, 12, 0.1); 
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(175, 12, 12, 0.3); 
+}
+
+.service-item h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.service-item ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.service-item ul li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 1.2em;
+}
+
+.service-item ul li::before {
+    content: "✓"; 
+    color: #e92c2c;
+    position: absolute;
+    left: 0;
+}
+

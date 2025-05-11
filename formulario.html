@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulario de Contacto</title>
+  <link rel="stylesheet" href="formulario.css"/>
+</head>
+<body>
+
+  <div class="formulario-container">
+    <h2>Contáctanos</h2>
+    <form action="procesar.php" method="POST">
+      <input type="text" name="nombre" placeholder="Nombre completo" required>
+      <input type="email" name="email" placeholder="Correo electrónico" required>
+      <input type="tel" name="telefono" placeholder="Teléfono" required>
+      <textarea name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
+      <button type="submit">Enviar mensaje</button>
+    </form>
+  </div>
+</body>
+</html>
